@@ -38,7 +38,7 @@ def about():
 def view():
     return render_template('GetEmp.html')
 
-@app.route("/edit", methods=['POST'])
+@app.route("/edit")
 def edit():
     return render_template('EditEmp.html')
 
