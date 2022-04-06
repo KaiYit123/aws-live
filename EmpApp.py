@@ -42,6 +42,10 @@ def view():
 def edit():
     return render_template('EditEmp.html')
 
+@app.route("/delete")
+def delete():
+    return render_template('GetEmpEdit.html')
+
 @app.route("/fetchdata", methods=['POST'])
 def fetchdata():
     emp_id = request.form['emp_id']
