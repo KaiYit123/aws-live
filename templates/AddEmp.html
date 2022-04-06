@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>WorkBalance-Add Employee Information</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="static/css/animate.min.css">
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/font-awesome.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="static/css/templatemo-style.css">
+    <script src="static/js/jquery.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+    <script src="static/js/jquery.singlePageNav.min.js"></script>
+    <script src="static/js/typed.js"></script>
+    <script src="static/js/wow.min.js"></script>
+    <script src="static/js/custom.js"></script>
+</head>
+
+<body id="top">
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon icon-bar"></span>
+                    <span class="icon icon-bar"></span>
+                    <span class="icon icon-bar"></span>
+                </button>
+                <a href="#" class="navbar-brand">WorkBalance</a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#top">HOME</a></li>
+                    <li><a href="#about">ABOUT</a></li>
+                    <li><a href="{{ url_for('Add') }}">ADD</a></li>
+                    <li><a href="#service">VIEW</a></li>
+                    <li><a href="#portfolio">DELETE</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="wow bounceIn" data-wow-offset="50" data-wow-delay="0.3s">Add Employee to Database</h2>
+                </div>
+                <div class="col-xs-12 wow fadeInLeft" data-wow-offset="50" data-wow-delay="0.9s">
+                    <form action="/addemp" autocomplete="on" method = "POST" enctype="multipart/form-data">
+                        <label>Employee ID:</label>
+                        <input type="number" name="emp_id" class="form-control">
+
+                        <label>First Name:</label>
+                        <input type="text" name="first_name" class="form-control">
+
+                        <label>Last Name:</label>
+                        <input type="text" name="last_name" class="form-control">
+
+                        <label>Primary Skill:</label>
+                        <input type="text" name="pri_skill" class="form-control">
+
+                        <label>Location:</label>
+                        <input type="text" name="location" class="form-control">
+
+                        <label>Image:</label>
+                        <input type=file name="emp_image_file">
+                        <input type="submit" class="form-control" value="Add Staff">
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <footer id="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p class="wow bounceIn" data-wow-offset="50" data-wow-delay="0.3s">
+                        WorkBalance &copy; Copyright 2022. Designed By WorkBalance
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <a href="/about">About Us</a>
+</body>
+
+</html>
