@@ -1,29 +1,82 @@
 	<!DOCTYPE html>
 <html>
 <head>
+	<meta charset="utf-8" />
 	<title>Get Employee Information</title>
+	<meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="static/css/animate.min.css">
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/font-awesome.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="static/css/templatemo-style.css">
+    <script src="static/js/jquery.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+    <script src="static/js/jquery.singlePageNav.min.js"></script>
+    <script src="static/js/typed.js"></script>
+    <script src="static/js/wow.min.js"></script>
+    <script src="static/js/custom.js"></script>	
 </head>
-<center>
-	<font color="black" size="5" style="font-family: avenir">
-
-		<h1 style="color: DodgerBlue">Employee Information</h1>
-
-		<body bgcolor="lightgrey">
-
-			<form action="/fetchdata" autocomplete="on" method="POST">
-
-				<h2 style="color: grey">Enter Employee ID</h2>
-
-		  		Employee ID:<br> <input style="height:25px;font-size:14pt;" type="number" name="emp_id" autofocus size="40"><br><br>
 
 
-		  		<button type="submit" style="background: grey; height: 45px; width: 200px; color: white; size: 5; font:oblique;">FETCH INFO</button><br><br>
+		<body>
+			<nav class="navbar navbar-default" role="navigation">
+				<div class="container">
+					<div class="navbar-header">
+						<button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+							<span class="icon icon-bar"></span>
+							<span class="icon icon-bar"></span>
+							<span class="icon icon-bar"></span>
+						</button>
+						<a href="#" class="navbar-brand">WorkBalance</a>
+					</div>
+					<div class="collapse navbar-collapse">
+						<ul class="nav navbar-nav navbar-right">
+							<li><a href="#top">HOME</a></li>
+							<li><a href="#about">ABOUT</a></li>
+							<li><a href="{{ url_for('Add') }}">ADD</a></li>
+							<li><a href="{{ url_for('view')}}">VIEW</a></li>
+							<li><a href="#portfolio">DELETE</a></li>
+						</ul>
+					</div>
+				</div>
+			</nav>
 
-		  		<button type="submit" formaction="http://3.134.115.108:80/" style="background: white	; height: 45px; width: 200px; color: black; size: 5; font:oblique;" method="GET">GO TO UPDATE DATABASE PAGE</button>
+			<section id="contact">
+				<div class="container">
+					<div class="row">
+							<div class="col-md-12">
+								<h2 style="color: DodgerBlue" class="wow bounceIn" data-wow-offset="50" data-wow-delay="0.3s">Employee Information</h1>
+							</div>
+								<div class="col-xs-12 wow fadeInLeft" data-wow-offset="50" data-wow-delay="0.9s">
+									<form action="/fetchdata" autocomplete="on" method="POST">
 
-			</form>
+										<h2 style="color: grey">Enter Employee ID</h2>
+						
+										<label>Employee ID:</label>
+										<input type="number" name="emp_id" class="form-control">
 
+										<button type="submit" class="form-control">Search</button><br><br>						
+									</form>
+								</div>	
+							
+					</div>
+				</div>
+			</section>
+			<footer id="copyright">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12 text-center">
+							<p class="wow bounceIn" data-wow-offset="50" data-wow-delay="0.3s">
+								WorkBalance &copy; Copyright 2022. Designed By WorkBalance
+							</p>
+						</div>
+					</div>
+				</div>
+			</footer>
 		</body>
-	</font>
-</center>
+
 </html>

@@ -1,42 +1,94 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="utf-8" />
 	<title>Employee Information</title>
+	<meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="static/css/animate.min.css">
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/font-awesome.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="static/css/templatemo-style.css">
+    <script src="static/js/jquery.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+    <script src="static/js/jquery.singlePageNav.min.js"></script>
+    <script src="static/js/typed.js"></script>
+    <script src="static/js/wow.min.js"></script>
+    <script src="static/js/custom.js"></script>
 </head>
-<center>
-	<font color="black" size="5" style="font-family: avenir">
 
-		<h1 style="color: DodgerBlue">Employee Information</h1>
+		<body id="top">
+			<nav class="navbar navbar-default" role="navigation">
+				<div class="container">
+					<div class="navbar-header">
+						<button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+							<span class="icon icon-bar"></span>
+							<span class="icon icon-bar"></span>
+							<span class="icon icon-bar"></span>
+						</button>
+						<a href="#" class="navbar-brand">WorkBalance</a>
+					</div>
+					<div class="collapse navbar-collapse">
+						<ul class="nav navbar-nav navbar-right">
+							<li><a href="#top">HOME</a></li>
+							<li><a href="#about">ABOUT</a></li>
+							<li><a href="{{ url_for('Add') }}">ADD</a></li>
+							<li><a href="{{ url_for('view')}}">VIEW</a></li>
+							<li><a href="#portfolio">DELETE</a></li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+			<section id="about">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<h2 style="color: DodgerBlue" class="wow bounceIn" data-wow-offset="50" data-wow-delay="0.3s">Employee Information</h2>
+						</div>
+						<div class="col-xs-12 wow fadeInLeft" data-wow-offset="50" data-wow-delay="0.9s">
 
-		<body bgcolor="lightgrey">
+								<label>Employee ID: </label>
+								<label name="emp_id">{{ user[0] }}</label><br/><br/> 
+		
+								<label>First Name:</label>
+								<label>{{ user[1] }}</label><br/><br/>
+	
+								<label>Last Name:</label>
+								<label>{{ user[2] }}</label><br/><br/>
+				
+								<label>Primary Interest:</label>
+								<label>{{ user[3] }}</label><br/><br/>
+	
+								<label>Location:</label>
+								<label>{{ user[4] }}</label><br/><br/>
+	
+								<label>Image URL:</label>
+								<label><a> {{ user[5] }} </a></label><br/><br/>
+				
+							<button type="submit" formaction="/edit" style="background: grey; height: 45px; width: 200px; color:white; font:oblique;" formaction="/edit">Update</button><br><br>
+								
+							<button type="submit" formaction="/" style="background: grey; height: 45px; width: 200px; color:white; font:oblique;" formaction="http://3.134.115.108:80/getemp">Delete</button><br><br>
 
-			<form>
-
-				<div>
-
-			  		Employee ID:<br> {{ user[0] }} <br><br>
-
-			  		First Name:<br> {{ user[1] }} <br><br>
-
-			  		Last Name:<br> {{ user[2] }} <br><br>
-
-			  		Primary Interest:<br> {{ user[3] }} <br><br>
-
-			  		Location:<br> {{ user[4] }} <br><br>
-
-			  		Image URL: <br><a> {{ user[5] }} </a><br><br>
-
-			  		<button type="submit" style="background: grey; height: 45px; width: 200px; color:white; font:oblique;" formaction="/edit">Update</button><br><br>
-					  
-					<button type="submit" style="background: grey; height: 45px; width: 200px; color:white; font:oblique;" formaction="http://3.134.115.108:80/getemp">Delete</button><br><br>
-
-
-			  	</div>
-
-			</form>
-
+						</div>
+					</div>
+				</div>
+			</section>
+			<footer id="copyright">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12 text-center">
+							<p class="wow bounceIn" data-wow-offset="50" data-wow-delay="0.3s">
+								WorkBalance &copy; Copyright 2022. Designed By WorkBalance
+							</p>
+						</div>
+					</div>
+				</div>
+			</footer>
 		</body>
 
-	</font>
-</center>
+
 </html>
