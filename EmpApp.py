@@ -40,7 +40,7 @@ def view():
 
 @app.route("/edit")
 def edit():
-    return render_template('EditEmp.html')
+    return render_template('GetEmpEdit.html')
 
 @app.route("/fetchdataforedit", methods=['POST'])
 def fetchdataforedit():
@@ -52,7 +52,7 @@ def fetchdataforedit():
     db_conn.commit()
     user = cursor.fetchone()
     cursor.close()
-    return render_template('EditEmpOutput.html', user = user)
+    return render_template('EditEmp.html', user = user)
 
 @app.route("/delete")
 def delete():
