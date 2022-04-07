@@ -64,7 +64,7 @@ def update():
 
     rtr_sql = "UPDATE employee SET first_name = %s WHERE emp_id = %s"
     cursor = db_conn.cursor()
-    cursor.execute(rtr_sql,(first_name,last_name,pri_skill,location,emp_id))
+    cursor.execute(rtr_sql,(first_name,emp_id))
     db_conn.commit()
     user = cursor.fetchone()
     cursor.close()
