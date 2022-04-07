@@ -54,7 +54,7 @@ def fetchdataforedit():
     cursor.close()
     return render_template('EditEmp.html', user = user)
 
-@app.route("/update", methods=['POST'])
+@app.route("/update", methods=['POST','GET'])
 def update():
     emp_id = request.form['emp_id']
     first_name = request.form['first_name']
