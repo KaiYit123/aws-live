@@ -56,19 +56,19 @@ def fetchdataforedit():
 
 @app.route("/update", methods=['POST','GET'])
 def update():
-    emp_id = request.form['emp_id']
+    empid = request.form['emp_id']
     first_name = request.form['first_name']
     last_name = request.form['last_name']
     pri_skill = request.form['pri_skill']
     location = request.form['location']
 
-    up_sql = "UPDATE employee SET first_name = %s, last_name = %s, pri_skill = %s,location = %s WHERE emp_id = 777"
+    up_sql = "UPDATE employee SET first_name = %s, last_name = %s, pri_skill = %s,location = %s WHERE emp_id = %s"
     cursor = db_conn.cursor()
-    cursor.execute(up_sql,(first_name,last_name,pri_skill,location))
+    cursor.execute(up_sql,(first_name,last_name,pri_skill,location,empid))
     db_conn.commit()
     user = cursor.fetchone()
     cursor.close()
-    return render_template('EditEmpOutput.html', id = emp_id)
+    return render_template('EditEmpOutput.html', id = empid)
 
 @app.route("/delete")
 def delete():
