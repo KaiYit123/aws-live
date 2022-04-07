@@ -62,7 +62,7 @@ def update():
     pri_skill = request.form['pri_skill']
     location = request.form['location']
 
-    rtr_sql = "UPDATE employee SET first_name=%s, last_name=%s, pri_skill=%s,location=%s WHERE emp_id = %s"
+    rtr_sql = "UPDATE employee SET first_name = %s WHERE emp_id = %s"
     cursor = db_conn.cursor()
     cursor.execute(rtr_sql,(first_name,last_name,pri_skill,location,emp_id))
     db_conn.commit()
