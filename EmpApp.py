@@ -54,7 +54,7 @@ def fetchdataforedit():
     cursor.close()
     return render_template('EditEmp.html', user = user)
 
-@app.route("/update", methods=['POST'])
+@app.route("/update", methods=['POST','GET'])
 def update():
     emp_id = request.form['emp_id']
     first_name = request.form['first_name']
@@ -62,10 +62,11 @@ def update():
     pri_skill = request.form['pri_skill']
     location = request.form['location']
 
-up_sql = "UPDATE employee SET first_name = KY,last_name=%yoyo, pri_skill=%s,location=%s WHERE emp_id = %s"
+    up_sql = "UPDATE employee SET first_name=%s, last_name=%s, pri_skill=%s,location=%s WHERE emp_id = %s"
     cursor = db_conn.cursor()
-    cursor.execute(up_sql,(first_name,last_name, pri_skill, location, emp_id))
+    cursor.execute(up_sql,(first_name,last_name,pri_skill,location,emp_id))
     db_conn.commit()
+    user = cursor.fetchone()
     cursor.close()
     return render_template('EditEmpOutput.html', id = emp_id)
 
