@@ -52,7 +52,7 @@ def fetchdataforedit():
     db_conn.commit()
     user = cursor.fetchone()
     cursor.close()
-    return render_template('DelEmpOutput.html', user = user)
+    return render_template('EditEmpOutput.html', user = user)
 
 @app.route("/delete")
 def delete():
