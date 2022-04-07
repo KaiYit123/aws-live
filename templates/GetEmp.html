@@ -3,9 +3,6 @@
 <head>
 	<meta charset="utf-8" />
 	<title>Get Employee Information</title>
-	<meta name="keywords" content="">
-    <meta name="description" content="">
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="static/css/animate.min.css">
@@ -35,11 +32,11 @@
 					</div>
 					<div class="collapse navbar-collapse">
 						<ul class="nav navbar-nav navbar-right">
-							<li><a href="#top">HOME</a></li>
+							<li><a href="{{ url_for('/') }}">HOME</a></li>
 							<li><a href="#about">ABOUT</a></li>
 							<li><a href="{{ url_for('Add') }}">ADD</a></li>
 							<li><a href="{{ url_for('view')}}">VIEW</a></li>
-							<li><a href="#portfolio">DELETE</a></li>
+							<li><a href="{{ url_for('delete')}}">DELETE</a></li>
 						</ul>
 					</div>
 				</div>

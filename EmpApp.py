@@ -44,7 +44,7 @@ def edit():
 
 @app.route("/delete")
 def delete():
-    return render_template('GetEmpEdit.html')
+    return render_template('GetEmpDelete.html')
 
 @app.route("/fetchdata", methods=['POST'])
 def fetchdata():
@@ -58,8 +58,8 @@ def fetchdata():
     cursor.close()
     return render_template('GetEmpOutput.html', user = user)
 
-@app.route("/fetchdataforedit", methods=['POST'])
-def fetchdataforedit():
+@app.route("/fetchdatafordelete", methods=['POST'])
+def fetchdatafordelete():
     emp_id = request.form['emp_id']
 
     rtr_sql = "DELETE FROM employee WHERE emp_id = %s"
@@ -68,7 +68,7 @@ def fetchdataforedit():
     db_conn.commit()
     user = cursor.fetchone()
     cursor.close()
-    return render_template('EditEmp.html', id = emp_id)
+    return render_template('DelEmpOutput.html', id = emp_id)
 
 @app.route("/addemp", methods=['POST'])
 def AddEmp():

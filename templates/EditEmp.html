@@ -3,9 +3,6 @@
 <head>
     <meta charset="utf-8" />
     <title>WorkBalance-Add Employee Information</title>
-    <meta name="keywords" content="">
-    <meta name="description" content="">
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="static/css/animate.min.css">
@@ -34,11 +31,11 @@
             </div>
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#top">HOME</a></li>
+                    <li><a href="{{ url_for('/') }}">HOME</a></li>
                     <li><a href="#about">ABOUT</a></li>
                     <li><a href="{{ url_for('Add') }}">ADD</a></li>
-                    <li><a href="#service">VIEW</a></li>
-                    <li><a href="#portfolio">DELETE</a></li>
+                    <li><a href="{{ url_for('view')}}">VIEW</a></li>
+                    <li><a href="{{ url_for('delete')}}">DELETE</a></li>
                 </ul>
             </div>
         </div>
@@ -52,21 +49,21 @@
                 <div class="col-xs-12 wow fadeInLeft" data-wow-offset="50" data-wow-delay="0.9s">
                     <form action="/addemp" autocomplete="on" method = "POST" enctype="multipart/form-data">
                         <label>Employee ID:</label>
-                        <input type="number" name="emp_id" class="form-control" text="hi">
+                        <textarea disabled style="height: 50px; resize: none; " name="emp_id" class="form-control"> </textarea>
 
                         <label>First Name:</label>
-                        <input type="text" name="first_name" class="form-control">
+                        <textarea style="height: 50px; resize: none; " name="first_name" class="form-control"> </textarea>
 
                         <label>Last Name:</label>
-                        <input type="text" name="last_name" class="form-control">
+                        <textarea style="height: 50px; resize: none; " name="last_name" class="form-control"> </textarea>
 
                         <label>Primary Skill:</label>
-                        <input type="text" name="pri_skill" class="form-control">
+                        <textarea style="height: 50px; resize: none; " name="pri_skill" class="form-control"> </textarea>
 
                         <label>Location:</label>
-                        <input type="text" name="location" class="form-control">
+                        <textarea style="height: 50px; resize: none; " name="location" class="form-control"> </textarea>
 
-                        <input type="submit" class="form-control" value="Add Staff">
+                        <input type="submit" class="form-control" value="Update Staff">
                     </form>
                 </div>
 
