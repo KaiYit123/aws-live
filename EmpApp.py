@@ -42,6 +42,18 @@ def view():
 def edit():
     return render_template('EditEmp.html')
 
+@app.route("/fetchdataforedit", methods=['POST'])
+def fetchdataforedit():
+    emp_id = request.form['emp_id']
+
+    rtr_sql = "SELECT * FROM employee WHERE emp_id = %s"
+    cursor = db_conn.cursor()
+    cursor.execute(rtr_sql,(emp_id))
+    db_conn.commit()
+    user = cursor.fetchone()
+    cursor.close()
+    return render_template('DelEmpOutput.html', user = user)
+
 @app.route("/delete")
 def delete():
     return render_template('GetEmpDelete.html')
